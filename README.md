@@ -1,5 +1,38 @@
 # Pink
 
+## XARM USAGE
+1. Open 3 console windows
+
+2. Navigate to the directory in all 3 windows
+    ```console
+    cd Desktop/pink-ufactory/examples/twomey
+    ```
+    (or wherever it is stored)
+3. Activate conda env in all 3 windows
+    ```console
+    conda activate pink
+    ```
+
+4. Run Collider Socket in one window
+    ```console
+    python xarm7_self_collision_socket.py
+    ```
+
+5. Run Joint Streaming in another console window
+    ```console
+    python stream-joints-xarm7.py
+    ```
+
+6. Run control program from third console window
+    ```console
+    python position_looper.py
+    ```
+    or
+    ```console
+    python wristPosition.py
+    ```
+    or Any script you decide to make (reccommended to base on position_looper.py)
+
 [![Build](https://img.shields.io/github/actions/workflow/status/stephane-caron/pink/ci.yml?branch=main)](https://github.com/stephane-caron/pink/actions)
 [![Documentation](https://img.shields.io/github/actions/workflow/status/stephane-caron/pink/docs.yml?branch=main&label=docs)](https://stephane-caron.github.io/pink/)
 [![Coverage](https://coveralls.io/repos/github/stephane-caron/pink/badge.svg?branch=main)](https://coveralls.io/github/stephane-caron/pink?branch=main)
@@ -11,7 +44,31 @@
 ![Banner for Pink v0.5.0](https://user-images.githubusercontent.com/1189580/192318997-ed7574c3-8238-451d-9548-a769d46ec03b.png)
 
 ## Installation
+### Installation on Mac OS
+Fresh install on MacOS sonomoa (14.7.2) with homebrew and conda installed.
 
+0. Install git with homebrew
+```console
+brew install git
+```
+(prompts you to install xcode developer tools)
+
+2. Create a new conda environment:
+   
+```console
+conda create -n pink python==3.12
+conda activate pink
+```
+
+2. Install prereqs and pink
+```console
+brew install zmq
+pip install meshcat
+conda install -c conda-forge pink
+```
+3. Try it out. 
+
+### Default Installation
 For best performance we recommended installing Pink from Conda:
 
 ```console
